@@ -1,0 +1,10 @@
+name: Security Workflow
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run GitLeaks Secret Scan
+        uses: zricethezav/gitleaks-action@v2
